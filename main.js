@@ -64,7 +64,7 @@ startButton.addEventListener('click',()=>{
     startButton.style.display = "none";
 })
 stopButton.addEventListener('click',()=>{
-    startButton.style.display = "flex";    
+    startButton.style.display = "block";    
     stopTimer();
 });
 resetButton.addEventListener('click',()=>{
@@ -84,9 +84,38 @@ buttons[0].addEventListener('click',()=>{
     part3.style.display = "none";
     buttons[1].style.opacity = ".1";
     buttons[2].style.opacity = ".1";
-    buttons[2].style.opacity = "1";
+    buttons[0].style.opacity = "1";
 
 })
+
+let nextButtion = document.getElementById("next");
+let countTap =0;
+nextButtion.addEventListener('click',()=>{
+    countTap++;
+    if(countTap==1){
+        part1.style.display = "none";
+        part2.style.display = "flex";
+        part3.style.display = "none";
+        oneMinuteRule();
+        buttons[0].style.opacity = ".1";
+        buttons[2].style.opacity = ".1";
+        buttons[1].style.opacity = "1"; 
+    }else if(countTap ==2){
+        part1.style.display = "none";
+        part2.style.display = "none";
+        part3.style.display = "flex";
+        buttons[1].style.opacity = ".1";
+        buttons[0].style.opacity = ".1";
+        buttons[2].style.opacity = "1";
+    }else{
+        part1.style.display = "flex";
+        part2.style.display = "none";
+        part3.style.display = "none";
+        buttons[1].style.opacity = ".1";
+        buttons[2].style.opacity = ".1";
+        buttons[0].style.opacity = "1";
+    }
+});
 // part2 button click event
 function oneMinuteRule(){
     let timer1;
@@ -100,6 +129,7 @@ function oneMinuteRule(){
                 youHave --;
             }else if(timeLeft1 <141 && timeLeft1 >0){
                 timeLeft1--;
+                document.getElementById("oneMin").style.display = "none";
                 document.getElementById("Title").style.filter  = "blur(5px)";
                 document.getElementsByClassName("points")[0].style.filter = "blur(5px)";
             } else {
