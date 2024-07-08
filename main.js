@@ -91,10 +91,13 @@ buttons[0].addEventListener('click',()=>{
 function oneMinuteRule(){
     let timer1;
     let timeLeft1 = 200;
+    let youHave = 60;
     if (!timer1) {
         timer1 = setInterval(() => {
             if (timeLeft1 > 140) {
                 timeLeft1--;
+                document.getElementById("oneMin").innerHTML = youHave;
+                youHave --;
             }else if(timeLeft1 <141 && timeLeft1 >0){
                 timeLeft1--;
                 document.getElementById("Title").style.filter  = "blur(5px)";
