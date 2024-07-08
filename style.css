@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+:root{
+    --themeColor : rgb(40,50,89);
+}
 *{
     padding: 0;
     margin: 0;
@@ -9,19 +12,24 @@
     /* border: 1px solid black; */
 }
 body{
-    background-color: whitesmoke;
+    background-color: var(--themeColor);
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* overflow-y: hidden; */
     /* justify-content: center; */
     /* height: 100vh; */
+    background-image: url(bg2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 .home{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: tomato;
+    background-color: var(--themeColor);
 }
 .home h1{
     margin: 0;
@@ -33,28 +41,32 @@ body{
 .home code{
     margin-bottom: 1rem;
     display: flex;
-    color: rgb(255, 173, 143);
+    color: rgba(255, 255, 255, 0.568);
 }
 #BeginTheExam{
-    font-size: 3rem;
-    background-color: tomato;
+    font-size: 1.5rem;
+    background-color: var(--themeColor);
     margin: 2rem;
     padding: 1rem;
     color: white;
     cursor: pointer;
+    border-radius: 3rem;
+    position: absolute;
+    bottom: 0;
+    /* left: 0; */
 }
 .bar{
     display: none;
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    background-color: tomato;
+    background-color: var(--themeColor);
     padding: 1rem;
 }
 .bar button{
     font-size: large;
     color: white;
-    background-color: tomato;
+    background-color: var(--themeColor);
     border: none;
     cursor: pointer;
 }
@@ -65,11 +77,11 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    overflow-y:hidden;
+    overflow:hidden;
 }
 .timerSection{
-    width: 30%;
-    height: 100%;
+    width: 15%;
+    height: 12rem;
     margin: 1rem;
     padding: 2rem;
     border-radius: 1rem;
@@ -104,15 +116,16 @@ h1 {
 }
 .controls{
     width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 .controls button {
     border-radius: 0rem;
     font-size: 1rem;
-    background-color: tomato;
+    background-color: var(--themeColor);
     color: white;
     padding: .5rem;
     width: 100%;
@@ -145,7 +158,25 @@ h1 {
     border-radius: 1rem;
     display: none;
     flex-direction: column;
+    overflow: hidden;
 }
+.title{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+textarea{
+    display: none;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    resize: none;
+    width: 80%;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
 #part3{
    width: 100%;
    height: 100%;
@@ -158,8 +189,10 @@ h1 {
 }
 
 .bottom a{
+    margin: 1rem;
+    display: none;
     text-decoration: none;
-    color: tomato;
+    color: var(--themeColor);
 }
 @media (max-width: 930px) {
     .parts{
